@@ -12,7 +12,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      //   hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -52,7 +52,7 @@ class Form extends React.Component {
               name="cardAttr1"
               id="attr01"
               value={ cardAttr1 }
-              onChange={ onInputChange }              
+              onChange={ onInputChange }
             />
           </label>
           <br />
@@ -64,7 +64,7 @@ class Form extends React.Component {
               name="cardAttr2"
               id="attr02"
               value={ cardAttr2 }
-              onChange={ onInputChange }              
+              onChange={ onInputChange }
             />
           </label>
           <br />
@@ -76,7 +76,7 @@ class Form extends React.Component {
               name="cardAttr3"
               id="attr03"
               value={ cardAttr3 }
-              onChange={ onInputChange }              
+              onChange={ onInputChange }
             />
           </label>
           <br />
@@ -109,14 +109,18 @@ class Form extends React.Component {
           <br />
           <label htmlFor="super">
             Super Trybe Trunfo
-            <input
-              type="checkbox"
-              name="cardTrunfo"
-              id="super"
-              data-testid="trunfo-input"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
+            {hasTrunfo ? (
+              <p>Você já tem um Super Trunfo em seu baralho</p>
+            ) : (
+              <input
+                type="checkbox"
+                name="cardTrunfo"
+                id="super"
+                data-testid="trunfo-input"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />
+            )}
           </label>
           <br />
           <button
@@ -142,7 +146,7 @@ Form.propTypes = {
   cardImage: Proptype.string,
   cardRare: Proptype.string,
   cardTrunfo: Proptype.bool,
-  //   hasTrunfo: Proptype.bool,
+  hasTrunfo: Proptype.bool,
   isSaveButtonDisabled: Proptype.bool,
   onInputChange: Proptype.func,
   onSaveButtonClick: Proptype.func,
