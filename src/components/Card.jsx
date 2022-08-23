@@ -15,6 +15,7 @@ class Card extends React.Component {
     } = this.props;
     return (
       <section>
+        <h1>Pré-visualização</h1>
         <p data-testid="name-card">{cardName}</p>
         <img src={ cardImage } alt={ cardName } data-testid="image-card" />
         <p data-testid="description-card">{cardDescription}</p>
