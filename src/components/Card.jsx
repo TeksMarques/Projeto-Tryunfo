@@ -14,8 +14,7 @@ class Card extends React.Component {
       cardTrunfo,
     } = this.props;
     return (
-      <section>
-        <h1>Pré-visualização</h1>
+      <section>        
         <p data-testid="name-card">{cardName}</p>
         <img src={ cardImage } alt={ cardName } data-testid="image-card" />
         <p data-testid="description-card">{cardDescription}</p>
@@ -32,9 +31,9 @@ class Card extends React.Component {
 Card.propTypes = {
   cardName: Proptype.string,
   cardDescription: Proptype.string,
-  cardAttr1: Proptype.string,
-  cardAttr2: Proptype.string,
-  cardAttr3: Proptype.string,
+  cardAttr1: Proptype.number,
+  cardAttr2: Proptype.number,
+  cardAttr3: Proptype.number,
   cardImage: Proptype.string,
   cardRare: Proptype.string,
   cardTrunfo: Proptype.string,
